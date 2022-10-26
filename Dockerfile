@@ -22,9 +22,9 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN cd /source && git clone --recursive https://github.com/maxwellhertz/OpenSfM
+RUN git clone --recursive https://github.com/maxwellhertz/OpenSfM
 
-WORKDIR /source/OpenSfM
+WORKDIR /OpenSfM
 
 RUN pip3 install -r requirements.txt && python3 setup.py build
 
