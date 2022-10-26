@@ -22,10 +22,11 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-
-COPY . /source/OpenSfM
+RUN cd /source && git clone --recursive https://github.com/maxwellhertz/OpenSfM
 
 WORKDIR /source/OpenSfM
 
-RUN pip3 install -r requirements.txt && \
-    python3 setup.py build
+RUN pip3 install -r requirements.txt && python3 setup.py build
+
+# Install OpenSfM Viewer
+RUN ./viewer/node_modules.sh
