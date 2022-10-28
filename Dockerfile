@@ -40,4 +40,4 @@ RUN  apt update && \
      pip3 install -r ./annotation_gui_gcp/requirements.txt && \
      pip3 install pyproj==2.6.0
 
-ENTRYPOINT ['export PYTHONPATH="${PYTHONPATH}:/OpenSfM" && python3 annotation_gui_gcp/main.py']
+ENTRYPOINT ["export PYTHONPATH=\"${PYTHONPATH}:/OpenSfM\" && python3", "annotation_gui_gcp/main.py"]
