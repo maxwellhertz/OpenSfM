@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+export PYTHONPATH="${PYTHONPATH}:/OpenSfM"
+python3 /OpenSfM/annotation_gui_gcp/main.py "$1"
