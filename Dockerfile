@@ -28,9 +28,6 @@ WORKDIR /OpenSfM
 
 RUN pip3 install -r requirements.txt && python3 setup.py build
 
-# Install OpenSfM Viewer
-RUN ./viewer/node_modules.sh
-
 # Install GCP annotation tool
 RUN  apt update && \
      apt -y install software-properties-common && \
