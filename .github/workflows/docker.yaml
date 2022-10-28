@@ -3,7 +3,7 @@ name: build-and-push-docker-image-for-opensfm
 on:
   push:
     branches:
-      - main
+      - gcp-annotation-tool
 
 permissions:
   contents: read
@@ -29,5 +29,5 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          platforms: linux/amd64,linux/arm64/v8
+          platforms: linux/amd64
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/opensfm:latest
