@@ -30,4 +30,4 @@ jobs:
         with:
           push: true
           platforms: linux/amd64
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/opensfm:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/opensfm:gcp
