@@ -129,8 +129,6 @@ class GroundControlPointManager:
     def load_from_file(self, file_path: str) -> None:
         if file_path is None:
             file_path = self.path + "/ground_control_points.json"
-        if not os.path.exists(file_path):
-            return
         self.points.clear()
         with open(file_path, "r") as f:
             input_points = json.load(f)["points"]
