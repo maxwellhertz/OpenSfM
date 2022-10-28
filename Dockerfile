@@ -30,12 +30,3 @@ RUN pip3 install -r requirements.txt && python3 setup.py build
 
 # Install OpenSfM Viewer
 RUN ./viewer/node_modules.sh
-
-# Install GCP annotation tool
-RUN  apt update && \
-     apt -y install software-properties-common && \
-     add-apt-repository -y ppa:ubuntugis/ppa && \
-     apt-get update && \
-     apt-get install -y python-numpy gdal-bin libgdal-dev && \
-     pip3 install rasterio && \
-     pip3 install -r ./annotation_gui_gcp/requirements.txt
