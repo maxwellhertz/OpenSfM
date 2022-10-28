@@ -26,6 +26,8 @@ RUN git clone --recursive https://github.com/maxwellhertz/OpenSfM
 
 WORKDIR /OpenSfM
 
+RUN git checkout gcp-annotation-tool
+
 RUN pip3 install -r requirements.txt && python3 setup.py build
 
 # Install GCP annotation tool
@@ -35,4 +37,6 @@ RUN  apt update && \
      apt-get update && \
      apt-get install -y python-numpy gdal-bin libgdal-dev && \
      pip3 install rasterio && \
-     pip3 install -r ./annotation_gui_gcp/requirements.txt
+     pip3 install -r ./annotation_gui_gcp/requirements.txt && \
+     pip3 install pyproj==2.6.0 && \
+     export PYTHONPATH="${PYTHONPATH}:/OpenSfM"
