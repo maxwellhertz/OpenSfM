@@ -38,5 +38,6 @@ RUN  apt update && \
      apt-get install -y python-numpy gdal-bin libgdal-dev && \
      pip3 install rasterio && \
      pip3 install -r ./annotation_gui_gcp/requirements.txt && \
-     pip3 install pyproj==2.6.0 && \
-     export PYTHONPATH="${PYTHONPATH}:/OpenSfM"
+     pip3 install pyproj==2.6.0 \
+
+ENTRYPOINT ['export PYTHONPATH="${PYTHONPATH}:/OpenSfM" && /bin/sh']
